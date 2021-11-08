@@ -22,3 +22,7 @@ app.listen(app.get('port'), () => {
 
 const homeController = require('./controllers')
 app.get('/', homeController.index)
+
+const errorController = require('./controllers/error')
+app.use(errorController.error404)
+app.use(errorController.error500)
