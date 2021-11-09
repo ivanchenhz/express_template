@@ -15,6 +15,9 @@ app.set('view engine', 'ejs')
 app.use(require('express-ejs-layouts'))
 app.use(express.static('public'))
 
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
+
 app.set('port', process.env.PORT || 3000)
 app.listen(app.get('port'), () => {
     console.log(`Server is running at http://localhost:${app.get('port')}`)
